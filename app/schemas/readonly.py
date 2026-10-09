@@ -34,6 +34,7 @@ class RiskCheckResponse(BaseModel):
     check_name: str
     result: str
     value: float | None
+    reason: str | None
     checked_at: datetime
 
     class Config:

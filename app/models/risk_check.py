@@ -20,5 +20,6 @@ class RiskCheck(Base):
     check_name: Mapped[str] = mapped_column(String, nullable=False)  # payment / fraud / stock / ...
     result: Mapped[str] = mapped_column(String, nullable=False)  # pass / fail
     value: Mapped[float | None] = mapped_column(Numeric(10, 2))
+    reason: Mapped[str | None] = mapped_column(String)  # why the check failed, kept for audit
 
     checked_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
